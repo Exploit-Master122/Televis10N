@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Darrkon TV v5</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* === GENERAL RESET & FONT === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0000 0%, #1a0000 100%);
+      color: #ff2a6d;
+      font-family: 'Exo 2', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      user-select: none;
+    }
+
+    /* Particle background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Modal container */
+    .modal-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .modal {
+      background: rgba(10, 0, 0, 0.9);
+      border-radius: 12px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 42, 109, 0.3);
+      width: 400px;
+      max-width: 80%;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: #ff2a6d;
+      text-shadow: 0 0 10px rgba(255, 42, 109, 0.7);
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #ff7bac;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Dropdown styling */
+    select {
+      appearance: none;
+      background-color: rgba(20, 0, 0, 0.7);
+      border: 1px solid #ff2a6d;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1rem;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    select:focus {
+      border-color: #ff7bac;
+      box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+    }
+
+    /* Open button */
+    .open-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #ff2a6d, #ff7bac);
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 20px;
+    }
+
+    .open-btn:hover {
+      background: linear-gradient(to right, #ff7bac, #ff2a6d);
+      box-shadow: 0 0 15px rgba(255, 42, 109, 0.6);
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #ff7bac;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255, 42, 109, 0.3);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .modal {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle background container -->
+  <div id="particles-js"></div>
+
+  <!-- Modal container -->
+  <div class="modal-container">
+    <div class="modal">
+      <h1>Darrkon Movies and TV</h1>
+      <p class="subtitle">One of the best TV dispensers,by Darrkon Network.</p>
+
+      <!-- Category dropdown -->
+      <label for="category">Select a link:</label>
+      <select id="category">
+        <option value="">Well,choose a proxied movie site...</option>
+        <option value="https://exploit-master122.github.io/DarrkonOS/">Darrkon Proxied Loader</option>
+        <option value="https://dogeub-v4-snowy.vercel.app/">Doge Option Loader</option>
+        <option value="https://pluto.tv/">Pluto Live</option>
+        <option value="https://movies.waves.lat">Waves/Darrkon Entertainment</option>
+        <option value="https://ruby-sigma.vercel.app/">Ruby Movies</option>
+        <option value="https://oe8wqh.152.53.38.100.nip.io/">Szvy Central TV</option>
+        <option value="https://watch.vidora.su/">Vidora Darrkon (Proxied)</option>
+        <option value="https://www.justwatch.com/au/provider/animelab">AnimeLab (Hosted on JustWatch)</option>
+        <option value="https://edgedcircles.com/uv/service/hvtrs8%2F-wuw%2Cpnez.vv-">Plex.to</option>
+        <option value="https://heartive-us4.pages.dev/series/">Heartive TV</option>
+     </select>
+
+      <!-- Open button -->
+      <button class="open-btn" onclick="openInProxy()">Launch</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Powered by Darrkon Network | Inspired by ThefakeSydney</p>
+  </footer>
+
+  <!-- Particles.js library -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+    // Initialize particles
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ff2a6d"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": 2,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#ff2a6d",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 1
+            }
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    // Function to open links in about:blank with iframe
+    function openInProxy() {
+      const selectedUrl = document.getElementById('category').value.trim();
+
+      if (!selectedUrl) {
+        alert('Please select a category.');
+        return;
+      }
+
+      const newWindow = window.open('about:blank', '_blank');
+      if (newWindow) {
+        newWindow.document.write(`
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>Proxy View</title>
+            <style>
+              body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+                background: #000;
+              }
+              iframe {
+                width: 100%;
+                height: 100vh;
+                border: none;
+              }
+            </style>
+            <script>
+              window.onbeforeunload = function (e) {
+                e.preventDefault();
+                e.returnValue = '';
+                return 'Leave site? Changes you made may not be saved.';
+              };
+            <\/script>
+          </head>
+          <body>
+            <iframe src="${selectedUrl}" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation"></iframe>
+          </body>
+          </html>
+        `);
+        newWindow.document.close();
+      } else {
+        alert('Popup blocked! Please allow popups for this site.');
+      }
+    }
+
+    // Add warning prompt on the main page
+    window.onbeforeunload = function (e) {
+      e.preventDefault();
+      e.returnValue = '';
+      return 'Leave site? Changes you made may not be saved.';
+    };
+  </script>
+</body>
+</html>
